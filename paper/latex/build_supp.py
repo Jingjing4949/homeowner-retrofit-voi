@@ -104,6 +104,30 @@ def rows():
               f"{', '.join(SCN[s] for s in r3b2)} scenario, not the one in H-B1: the R3 verdict in dataset B is "
               "not stable across re-runs of the same code, because $D_\\text{static}$ lies close to the 0.02 "
               "threshold."))
+    c1 = load("runs/remote_c1/output_c1/summary.json")
+    rc = c1["results"]
+
+    def met(e, claim):
+        return sum(rc[d]["results"][f"s{s[0]}@{e}"][claim] for d in "AB" for s in c1["seed_sets"])
+
+    def span(stat, e):
+        f = lambda x: f"{x:.3f}".replace("-", "$-$")
+        out = []
+        for d in "AB":
+            v = [rc[d]["results"][f"s{s[0]}@{e}"][stat]["est"] for s in c1["seed_sets"]]
+            out.append(f"{d}: {f(min(v))} to {f(max(v))}")
+        return "; ".join(out)
+
+    claims = [("C1 retraining: Q1--Q3 hold for each of four independently trained ensembles ($e=0$)",
+               span("rho3_home_static", 0.0) + r" ($\rho_3$)",
+               f"{sum(met(0.0, k) for k in ('Q1_home_value', 'Q2_home_over_audit', 'Q3_short_home_questionnaire'))}/24"),
+              ("C2 answer errors: Q1--Q3 hold for each ensemble when each homeowner answer is replaced by a random "
+               "draw with probability $e=0.2$", span("home_minus_audit", 0.2) + " (Q2)",
+               f"{sum(met(0.2, k) for k in ('Q1_home_value', 'Q2_home_over_audit', 'Q3_short_home_questionnaire'))}/24"),
+              ("Descriptive, $e=0.3$: Q2", span("home_minus_audit", 0.3), f"{met(0.3, 'Q2_home_over_audit')}/8")]
+    R.append(("H-C1", "A, B test, third use (main scenario)", claims,
+              "Both registered criteria held. Q1 and Q3 also held at $e=0.3$ (20\\% of answers changed), Q2 did "
+              "not. Reported in Section 5.5; the last column counts ensemble--dataset--claim cases."))
     return R
 
 
@@ -127,7 +151,7 @@ Jingjing Fan, Yunan Zhang
 
 Every analysis in this project was registered before it was run: the code was frozen with cryptographic
 hashes, and the claims, thresholds and evaluation split were written down in a protocol. The two test splits
-were each evaluated twice. Table~\ref{tabS1} lists every registered stage in order, the claims it tested, and
+were each evaluated twice, and their main scenarios a third time for the robustness analysis. Table~\ref{tabS1} lists every registered stage in order, the claims it tested, and
 what became of them, including claims that were withdrawn or did not replicate. Estimates are for the main
 emission scenario (Cambium long-run marginal rates, mid case) with 95\% PUMA cluster-bootstrap intervals; the
 last column counts the emission scenarios in which the registered threshold was met (four in dataset A, three in
@@ -140,6 +164,8 @@ dwelling and that its value comes entirely from ground-source heat pump (GSHP) p
 separate tier that requires a thermal response test. The four-tier decomposition was registered on the tuning
 split (H-A5) and replicated on the dataset B test split (H-B1). (iii)~After H-B1, the paper was refocused on
 homeowner questions, and the claims Q1--Q3 were registered and evaluated on both test splits (H-A6, H-B2).
+Finally, their sensitivity to retraining and to errors in homeowner answers was registered and evaluated on the
+main scenario of both test splits (H-C1).
 
 Q1--Q3 are therefore not tests on untouched data. On the dataset B test split, the gradient-boosting homeowner
 and audit gains and a short-questionnaire ratio over homeowner and audit items had already been seen (H-B1);

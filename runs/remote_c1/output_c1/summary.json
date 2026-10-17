@@ -1,0 +1,2249 @@
+{
+ "smoke": false,
+ "cfg": {
+  "emb": 16,
+  "hidden": [
+   512,
+   512,
+   256
+  ],
+  "dropout": 0.1,
+  "lr": 0.001,
+  "wd": 1e-05,
+  "batch": 2048,
+  "epochs": 30,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "n_boot": 1000
+ },
+ "seed_sets": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   11,
+   12,
+   13
+  ],
+  [
+   21,
+   22,
+   23
+  ],
+  [
+   31,
+   32,
+   33
+  ]
+ ],
+ "errors": [
+  0.0,
+  0.1,
+  0.2,
+  0.3
+ ],
+ "k": 3,
+ "noise_seed": 20261017,
+ "primary_error": 0.2,
+ "home": [
+  "in.geometry_building_type_height",
+  "in.hvac_has_ducts",
+  "in.duct_location",
+  "in.windows",
+  "in.window_areas",
+  "in.water_heater_efficiency",
+  "in.water_heater_location",
+  "in.geometry_attic_type",
+  "in.geometry_foundation_type",
+  "in.geometry_wall_type",
+  "in.heating_setpoint",
+  "in.cooling_setpoint",
+  "in.hvac_has_shared_system",
+  "in.occupants",
+  "in.usage_level"
+ ],
+ "results": {
+  "A": {
+   "answers_changed_share": {
+    "0.0": 0.0,
+    "0.1": 0.06539918986018553,
+    "0.2": 0.13146959912521403,
+    "0.3": 0.19672367905259028
+   },
+   "orders": {
+    "s1": {
+     "national": [
+      "in.hvac_has_shared_system",
+      "in.occupants",
+      "in.duct_location"
+     ],
+     "zones": {
+      "1A": [
+       "in.hvac_has_shared_system",
+       "in.geometry_foundation_type",
+       "in.geometry_attic_type"
+      ],
+      "2A": [
+       "in.hvac_has_shared_system",
+       "in.heating_setpoint",
+       "in.occupants"
+      ],
+      "2B": [
+       "in.occupants",
+       "in.duct_location",
+       "in.geometry_attic_type"
+      ],
+      "3A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "3B": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.water_heater_efficiency"
+      ],
+      "3C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.duct_location"
+      ],
+      "4A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "4C": [
+       "in.occupants",
+       "in.duct_location",
+       "in.heating_setpoint"
+      ],
+      "5A": [
+       "in.hvac_has_shared_system",
+       "in.water_heater_efficiency",
+       "in.duct_location"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.water_heater_efficiency",
+       "in.geometry_wall_type"
+      ],
+      "6A": [
+       "in.duct_location",
+       "in.hvac_has_shared_system",
+       "in.water_heater_efficiency"
+      ]
+     }
+    },
+    "s11": {
+     "national": [
+      "in.hvac_has_shared_system",
+      "in.occupants",
+      "in.geometry_foundation_type"
+     ],
+     "zones": {
+      "1A": [
+       "in.hvac_has_shared_system",
+       "in.water_heater_efficiency",
+       "in.heating_setpoint"
+      ],
+      "2A": [
+       "in.hvac_has_shared_system",
+       "in.heating_setpoint",
+       "in.occupants"
+      ],
+      "2B": [
+       "in.hvac_has_shared_system",
+       "in.usage_level",
+       "in.geometry_building_type_height"
+      ],
+      "3A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.cooling_setpoint"
+      ],
+      "3B": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.water_heater_efficiency"
+      ],
+      "3C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.cooling_setpoint"
+      ],
+      "4A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.usage_level"
+      ],
+      "4C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.geometry_foundation_type"
+      ],
+      "5A": [
+       "in.hvac_has_shared_system",
+       "in.water_heater_location",
+       "in.occupants"
+      ],
+      "5B": [
+       "in.geometry_foundation_type",
+       "in.heating_setpoint",
+       "in.occupants"
+      ],
+      "6A": [
+       "in.duct_location",
+       "in.geometry_foundation_type",
+       "in.windows"
+      ]
+     }
+    },
+    "s21": {
+     "national": [
+      "in.duct_location",
+      "in.occupants",
+      "in.hvac_has_shared_system"
+     ],
+     "zones": {
+      "1A": [
+       "in.hvac_has_shared_system",
+       "in.usage_level",
+       "in.heating_setpoint"
+      ],
+      "2A": [
+       "in.hvac_has_shared_system",
+       "in.heating_setpoint",
+       "in.usage_level"
+      ],
+      "2B": [
+       "in.hvac_has_shared_system",
+       "in.usage_level",
+       "in.geometry_attic_type"
+      ],
+      "3A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.usage_level"
+      ],
+      "3B": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.water_heater_efficiency"
+      ],
+      "3C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.water_heater_location"
+      ],
+      "4A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.windows"
+      ],
+      "4C": [
+       "in.heating_setpoint",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "5A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.usage_level",
+       "in.hvac_has_shared_system"
+      ],
+      "6A": [
+       "in.duct_location",
+       "in.windows",
+       "in.hvac_has_shared_system"
+      ]
+     }
+    },
+    "s31": {
+     "national": [
+      "in.hvac_has_shared_system",
+      "in.occupants",
+      "in.duct_location"
+     ],
+     "zones": {
+      "1A": [
+       "in.hvac_has_shared_system",
+       "in.duct_location",
+       "in.windows"
+      ],
+      "2A": [
+       "in.hvac_has_shared_system",
+       "in.heating_setpoint",
+       "in.usage_level"
+      ],
+      "2B": [
+       "in.hvac_has_shared_system",
+       "in.usage_level",
+       "in.duct_location"
+      ],
+      "3A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "3B": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.usage_level"
+      ],
+      "3C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.windows"
+      ],
+      "4A": [
+       "in.hvac_has_shared_system",
+       "in.occupants",
+       "in.water_heater_location"
+      ],
+      "4C": [
+       "in.occupants",
+       "in.heating_setpoint",
+       "in.duct_location"
+      ],
+      "5A": [
+       "in.hvac_has_shared_system",
+       "in.water_heater_location",
+       "in.occupants"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.heating_setpoint",
+       "in.usage_level"
+      ],
+      "6A": [
+       "in.duct_location",
+       "in.hvac_has_shared_system",
+       "in.water_heater_location"
+      ]
+     }
+    }
+   },
+   "training": {
+    "s1": [
+     {
+      "best_es_loss": 0.09756992012262344,
+      "best_epoch": 27
+     },
+     {
+      "best_es_loss": 0.09611395746469498,
+      "best_epoch": 28
+     },
+     {
+      "best_es_loss": 0.0958377867937088,
+      "best_epoch": 29
+     }
+    ],
+    "s11": [
+     {
+      "best_es_loss": 0.09674660116434097,
+      "best_epoch": 21
+     },
+     {
+      "best_es_loss": 0.09605095535516739,
+      "best_epoch": 28
+     },
+     {
+      "best_es_loss": 0.09686752408742905,
+      "best_epoch": 30
+     }
+    ],
+    "s21": [
+     {
+      "best_es_loss": 0.09622392058372498,
+      "best_epoch": 27
+     },
+     {
+      "best_es_loss": 0.09610671550035477,
+      "best_epoch": 30
+     },
+     {
+      "best_es_loss": 0.09695542603731155,
+      "best_epoch": 30
+     }
+    ],
+    "s31": [
+     {
+      "best_es_loss": 0.09622473269701004,
+      "best_epoch": 29
+     },
+     {
+      "best_es_loss": 0.09745825082063675,
+      "best_epoch": 28
+     },
+     {
+      "best_es_loss": 0.09685712307691574,
+      "best_epoch": 27
+     }
+    ]
+   },
+   "V": {
+    "FIX_SCZ": 2587.9713981462064,
+    "ORACLE": 3047.2118904830495,
+    "s1:NONE": 2887.3395851937225,
+    "s1:HOME@0.0": 2925.8409935063846,
+    "s1:FULL@0.0": 2941.8787187513776,
+    "s1:STATIC3@0.0": 2916.3983772287856,
+    "s1:HOME@0.1": 2920.216384715214,
+    "s1:FULL@0.1": 2937.6066285147035,
+    "s1:STATIC3@0.1": 2912.333050535727,
+    "s1:HOME@0.2": 2913.747765589152,
+    "s1:FULL@0.2": 2933.3321268518807,
+    "s1:STATIC3@0.2": 2905.9531496656878,
+    "s1:HOME@0.3": 2905.8994614512117,
+    "s1:FULL@0.3": 2928.032130271904,
+    "s1:STATIC3@0.3": 2901.0886187464093,
+    "s11:NONE": 2884.275248957788,
+    "s11:HOME@0.0": 2926.8880535031944,
+    "s11:FULL@0.0": 2941.3943580155724,
+    "s11:STATIC3@0.0": 2916.5921877150827,
+    "s11:HOME@0.1": 2920.440436502135,
+    "s11:FULL@0.1": 2937.5607884898186,
+    "s11:STATIC3@0.1": 2910.8949085018467,
+    "s11:HOME@0.2": 2913.3896556811,
+    "s11:FULL@0.2": 2933.2809011136333,
+    "s11:STATIC3@0.2": 2905.085392667341,
+    "s11:HOME@0.3": 2906.0838191095777,
+    "s11:FULL@0.3": 2928.2915820379876,
+    "s11:STATIC3@0.3": 2899.318398883203,
+    "s21:NONE": 2887.4132089093723,
+    "s21:HOME@0.0": 2926.3017783227715,
+    "s21:FULL@0.0": 2940.6756078280373,
+    "s21:STATIC3@0.0": 2916.830167938737,
+    "s21:HOME@0.1": 2920.471198270268,
+    "s21:FULL@0.1": 2937.148769976931,
+    "s21:STATIC3@0.1": 2911.697649548805,
+    "s21:HOME@0.2": 2913.732781056793,
+    "s21:FULL@0.2": 2932.1268584426216,
+    "s21:STATIC3@0.2": 2905.4517025473015,
+    "s21:HOME@0.3": 2906.5896567221007,
+    "s21:FULL@0.3": 2927.4067656560487,
+    "s21:STATIC3@0.3": 2900.772840538837,
+    "s31:NONE": 2888.651156342513,
+    "s31:HOME@0.0": 2927.871463313753,
+    "s31:FULL@0.0": 2942.5687929245514,
+    "s31:STATIC3@0.0": 2918.4699024378147,
+    "s31:HOME@0.1": 2922.7888044290116,
+    "s31:FULL@0.1": 2937.8563092671993,
+    "s31:STATIC3@0.1": 2913.106761727157,
+    "s31:HOME@0.2": 2916.0750032277147,
+    "s31:FULL@0.2": 2933.621913409022,
+    "s31:STATIC3@0.2": 2906.853704071697,
+    "s31:HOME@0.3": 2908.810390649458,
+    "s31:FULL@0.3": 2929.21257987242,
+    "s31:STATIC3@0.3": 2901.6835035627737
+   },
+   "G": 459.2404923368431,
+   "C": {
+    "FIX_SCZ": 0.0,
+    "ORACLE": 1.0,
+    "s1:NONE": 0.6518767226386822,
+    "s1:HOME@0.0": 0.7357138601627448,
+    "s1:FULL@0.0": 0.7706361405639897,
+    "s1:STATIC3@0.0": 0.7151524845106321,
+    "s1:HOME@0.1": 0.7234662276368112,
+    "s1:FULL@0.1": 0.7613336284642059,
+    "s1:STATIC3@0.1": 0.7063002017505207,
+    "s1:HOME@0.2": 0.709380755571518,
+    "s1:FULL@0.2": 0.7520258654638834,
+    "s1:STATIC3@0.2": 0.6924079144272159,
+    "s1:HOME@0.3": 0.6922910078926834,
+    "s1:FULL@0.3": 0.7404850787335849,
+    "s1:STATIC3@0.3": 0.6818153578028527,
+    "s11:NONE": 0.6452041049425775,
+    "s11:HOME@0.0": 0.737993842033424,
+    "s11:FULL@0.0": 0.7695814410244508,
+    "s11:STATIC3@0.0": 0.7155745084600248,
+    "s11:HOME@0.1": 0.7239541022703846,
+    "s11:FULL@0.1": 0.7612338114279258,
+    "s11:STATIC3@0.1": 0.7031686354843091,
+    "s11:HOME@0.2": 0.7086009682617584,
+    "s11:FULL@0.2": 0.7519143209918644,
+    "s11:STATIC3@0.2": 0.6905183663302452,
+    "s11:HOME@0.3": 0.6926924482304636,
+    "s11:FULL@0.3": 0.7410500371168569,
+    "s11:STATIC3@0.3": 0.6779606892952944,
+    "s21:NONE": 0.6520370388931901,
+    "s21:HOME@0.0": 0.7367172229412362,
+    "s21:FULL@0.0": 0.768016356500049,
+    "s21:STATIC3@0.0": 0.7160927123806834,
+    "s21:HOME@0.1": 0.7240210862769043,
+    "s21:FULL@0.1": 0.7603366376817886,
+    "s21:STATIC3@0.1": 0.7049166108051999,
+    "s21:HOME@0.2": 0.7093481266274048,
+    "s21:FULL@0.2": 0.7494013834563711,
+    "s21:STATIC3@0.2": 0.6913160091471856,
+    "s21:HOME@0.3": 0.6937939138480729,
+    "s21:FULL@0.3": 0.7391233420699186,
+    "s21:STATIC3@0.3": 0.6811277481237379,
+    "s31:NONE": 0.6547326797475957,
+    "s31:HOME@0.0": 0.7401352250929935,
+    "s31:FULL@0.0": 0.7721387828280948,
+    "s31:STATIC3@0.0": 0.7196632479202087,
+    "s31:HOME@0.1": 0.729067693005659,
+    "s31:FULL@0.1": 0.7618773103839455,
+    "s31:STATIC3@0.1": 0.7079849643190232,
+    "s31:HOME@0.2": 0.7144483349278601,
+    "s31:FULL@0.2": 0.7526568781075348,
+    "s31:STATIC3@0.2": 0.6943688791527494,
+    "s31:HOME@0.3": 0.6986295804855183,
+    "s31:FULL@0.3": 0.7430555175781854,
+    "s31:STATIC3@0.3": 0.6831107244490674
+   },
+   "results": {
+    "s1@0.0": {
+     "nn_home_gain": {
+      "est": 0.08383713752406252,
+      "ci": [
+       0.07681937843151226,
+       0.09116120620682425
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.0349222804012449,
+      "ci": [
+       0.03003564366750543,
+       0.03986679638641309
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.04891485712281762,
+      "ci": [
+       0.040015738511118545,
+       0.05823912784910668
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7547462108160448,
+      "ci": [
+       0.7245148153896523,
+       0.7870237283251067
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.1": {
+     "nn_home_gain": {
+      "est": 0.071589504998129,
+      "ci": [
+       0.06505279360491238,
+       0.07844743261383762
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.037867400827394704,
+      "ci": [
+       0.03211260460357352,
+       0.0433944475060822
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.03372210417073429,
+      "ci": [
+       0.024469998242533497,
+       0.04308969858445564
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7602158879749314,
+      "ci": [
+       0.7242388904809741,
+       0.7982312409933409
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8539116090119576,
+      "ci": [
+       0.8293318196236308,
+       0.8815517655747213
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.2": {
+     "nn_home_gain": {
+      "est": 0.05750403293283579,
+      "ci": [
+       0.05123799802549796,
+       0.06413563072439438
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04264510989236536,
+      "ci": [
+       0.03642445318996376,
+       0.048370340983666715
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.014858923040470429,
+      "ci": [
+       0.0052762806115809165,
+       0.025367477551442877
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7048408558730791,
+      "ci": [
+       0.6425667760653604,
+       0.7707998831089785
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6859016735433181,
+      "ci": [
+       0.6436690462719092,
+       0.7336875410039624
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.3": {
+     "nn_home_gain": {
+      "est": 0.04041428525400115,
+      "ci": [
+       0.03416644767719375,
+       0.046958303018328214
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04819407084090155,
+      "ci": [
+       0.04239509049327773,
+       0.05398795368721636
+      ]
+     },
+     "home_minus_audit": {
+      "est": -0.007779785586900401,
+      "ci": [
+       -0.017849082751216796,
+       0.002597142654434128
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7407933847155315,
+      "ci": [
+       0.659213647186015,
+       0.820393069379013
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.48205707455603003,
+      "ci": [
+       0.42651748408448764,
+       0.5340121553334786
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.0": {
+     "nn_home_gain": {
+      "est": 0.09278973709084648,
+      "ci": [
+       0.08522382427269928,
+       0.10087747188740884
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03158759899102681,
+      "ci": [
+       0.026774443076136627,
+       0.03637991794748835
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.06120213809981967,
+      "ci": [
+       0.051947104736839236,
+       0.07034452655960771
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7583856331929318,
+      "ci": [
+       0.7275227708393115,
+       0.7914504195134856
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.1": {
+     "nn_home_gain": {
+      "est": 0.07874999732780708,
+      "ci": [
+       0.07169148717976469,
+       0.08621307312816022
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.037279709157541197,
+      "ci": [
+       0.032688400358866165,
+       0.041882801468044045
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.04147028817026588,
+      "ci": [
+       0.03277241028562496,
+       0.04997860731612369
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7360575556650076,
+      "ci": [
+       0.6999855538852682,
+       0.7712940793599689
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8486929675283627,
+      "ci": [
+       0.8256164926831012,
+       0.8755396506152991
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.2": {
+     "nn_home_gain": {
+      "est": 0.06339686331918093,
+      "ci": [
+       0.057050244800886794,
+       0.06996058412752279
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04331335273010595,
+      "ci": [
+       0.03780673776561592,
+       0.04825013909054229
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.020083510589074982,
+      "ci": [
+       0.011378675642839831,
+       0.028635605792748868
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7147713469596487,
+      "ci": [
+       0.6709065540507326,
+       0.7636108934473173
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6832314144517055,
+      "ci": [
+       0.6510282748212187,
+       0.71713892687607
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.3": {
+     "nn_home_gain": {
+      "est": 0.04748834328788609,
+      "ci": [
+       0.041377231605374834,
+       0.05345275063891214
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.0483575888863933,
+      "ci": [
+       0.04323739005499091,
+       0.05330026618985847
+      ]
+     },
+     "home_minus_audit": {
+      "est": -0.0008692455985072067,
+      "ci": [
+       -0.008696112955950427,
+       0.007124035463442788
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.6897815776418723,
+      "ci": [
+       0.6127417577897772,
+       0.7716883545503933
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.51178443626144,
+      "ci": [
+       0.47140044103021417,
+       0.5516125746103503
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.0": {
+     "nn_home_gain": {
+      "est": 0.08468018404804611,
+      "ci": [
+       0.07751537538898934,
+       0.09236085032926758
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03129913355881275,
+      "ci": [
+       0.02583113685942235,
+       0.0366923777924564
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.05338105048923336,
+      "ci": [
+       0.04378666301538317,
+       0.06250060849798801
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7564423035635963,
+      "ci": [
+       0.7240689384024978,
+       0.7917471984115375
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.1": {
+     "nn_home_gain": {
+      "est": 0.07198404738371422,
+      "ci": [
+       0.06540720118350771,
+       0.07917308438816663
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.036315551404884294,
+      "ci": [
+       0.030635784620997773,
+       0.0415859080392195
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.03566849597882993,
+      "ci": [
+       0.0270633695911336,
+       0.04454625956712229
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7346012600560344,
+      "ci": [
+       0.6959416054760482,
+       0.772756482725254
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8500695669588021,
+      "ci": [
+       0.8226647786636693,
+       0.8781234420628815
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.2": {
+     "nn_home_gain": {
+      "est": 0.05731108773421467,
+      "ci": [
+       0.0509438970284449,
+       0.06316582064259617
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04005325682896632,
+      "ci": [
+       0.03418093956841081,
+       0.045897684270875094
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.01725783090524835,
+      "ci": [
+       0.008834133378664599,
+       0.025649423314102606
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.685364242887088,
+      "ci": [
+       0.6233605891367168,
+       0.7492226382985082
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6767945580006927,
+      "ci": [
+       0.6394016681295159,
+       0.7136952414224431
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.3": {
+     "nn_home_gain": {
+      "est": 0.04175687495488278,
+      "ci": [
+       0.03561301056884243,
+       0.048128202705940384
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04532942822184571,
+      "ci": [
+       0.03946083741048607,
+       0.05071860349011025
+      ]
+     },
+     "home_minus_audit": {
+      "est": -0.00357255326696293,
+      "ci": [
+       -0.012320513097541144,
+       0.005330211986758313
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.6966687344773657,
+      "ci": [
+       0.6191731025589874,
+       0.7768191008991586
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.49311270900392273,
+      "ci": [
+       0.44714632790664927,
+       0.5405527418274452
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.0": {
+     "nn_home_gain": {
+      "est": 0.0854025453453977,
+      "ci": [
+       0.07736489174130078,
+       0.09286910265798339
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03200355773510133,
+      "ci": [
+       0.027252124044302526,
+       0.0367337044282473
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.05339898761029638,
+      "ci": [
+       0.04416500985843805,
+       0.0629205154972122
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7602884423410463,
+      "ci": [
+       0.7240664445608753,
+       0.8000114022622381
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.1": {
+     "nn_home_gain": {
+      "est": 0.07433501325806324,
+      "ci": [
+       0.0670837337495044,
+       0.08158777114181989
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03280961737828647,
+      "ci": [
+       0.027541323018218992,
+       0.037922873485257115
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.04152539587977677,
+      "ci": [
+       0.032226734217214406,
+       0.050453839865924915
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7163822569931557,
+      "ci": [
+       0.6738291776908909,
+       0.7658768418677907
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.870407468037709,
+      "ci": [
+       0.8450787582516858,
+       0.8959009451706521
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.2": {
+     "nn_home_gain": {
+      "est": 0.05971565518026434,
+      "ci": [
+       0.05358460282480305,
+       0.06592184733095928
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.0382085431796747,
+      "ci": [
+       0.03246342783915889,
+       0.044318225968709477
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.021507112000589634,
+      "ci": [
+       0.012899543316429025,
+       0.03047980492152687
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.663748882692543,
+      "ci": [
+       0.6118817878978359,
+       0.7208600430588434
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6992257073691818,
+      "ci": [
+       0.6593221981291835,
+       0.7374579687501941
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.3": {
+     "nn_home_gain": {
+      "est": 0.04389690073792252,
+      "ci": [
+       0.03722546053465513,
+       0.05079204280664004
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04442593709266718,
+      "ci": [
+       0.039413621095899944,
+       0.049532831513083124
+      ]
+     },
+     "home_minus_audit": {
+      "est": -0.0005290363547446608,
+      "ci": [
+       -0.009047563340031933,
+       0.008048308002857843
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.646470348120861,
+      "ci": [
+       0.5636269682372963,
+       0.7400676383667406
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.5139999113655,
+      "ci": [
+       0.46807527269056093,
+       0.559242820096013
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    }
+   },
+   "verdict": {
+    "C1_retraining": true,
+    "C2_answer_error": true
+   },
+   "integrity": {
+    "FIX_SCZ": 2587.9713981462064,
+    "ORACLE": 3047.2118904830495,
+    "match": true
+   }
+  },
+  "B": {
+   "answers_changed_share": {
+    "0.0": 0.0,
+    "0.1": 0.06552617936754795,
+    "0.2": 0.13116427892158378,
+    "0.3": 0.19681061799855123
+   },
+   "orders": {
+    "s1": {
+     "national": [
+      "in.duct_location",
+      "in.cooling_setpoint",
+      "in.hvac_has_shared_system"
+     ],
+     "zones": {
+      "1A": [
+       "in.geometry_building_type_height",
+       "in.hvac_has_ducts",
+       "in.duct_location"
+      ],
+      "2A": [
+       "in.cooling_setpoint",
+       "in.geometry_building_type_height",
+       "in.window_areas"
+      ],
+      "2B": [
+       "in.geometry_building_type_height",
+       "in.windows",
+       "in.hvac_has_ducts"
+      ],
+      "3A": [
+       "in.occupants",
+       "in.duct_location",
+       "in.windows"
+      ],
+      "3B": [
+       "in.geometry_attic_type",
+       "in.hvac_has_shared_system",
+       "in.hvac_has_ducts"
+      ],
+      "3C": [
+       "in.windows",
+       "in.geometry_building_type_height",
+       "in.water_heater_location"
+      ],
+      "4A": [
+       "in.cooling_setpoint",
+       "in.duct_location",
+       "in.geometry_foundation_type"
+      ],
+      "4C": [
+       "in.heating_setpoint",
+       "in.usage_level",
+       "in.cooling_setpoint"
+      ],
+      "5A": [
+       "in.duct_location",
+       "in.heating_setpoint",
+       "in.cooling_setpoint"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.water_heater_location"
+      ],
+      "6A": [
+       "in.hvac_has_shared_system",
+       "in.water_heater_location",
+       "in.hvac_has_ducts"
+      ]
+     }
+    },
+    "s11": {
+     "national": [
+      "in.duct_location",
+      "in.hvac_has_shared_system",
+      "in.cooling_setpoint"
+     ],
+     "zones": {
+      "1A": [
+       "in.geometry_building_type_height",
+       "in.hvac_has_ducts",
+       "in.duct_location"
+      ],
+      "2A": [
+       "in.windows",
+       "in.window_areas",
+       "in.water_heater_location"
+      ],
+      "2B": [
+       "in.geometry_building_type_height",
+       "in.hvac_has_ducts",
+       "in.duct_location"
+      ],
+      "3A": [
+       "in.cooling_setpoint",
+       "in.duct_location",
+       "in.geometry_attic_type"
+      ],
+      "3B": [
+       "in.occupants",
+       "in.geometry_foundation_type",
+       "in.geometry_wall_type"
+      ],
+      "3C": [
+       "in.duct_location",
+       "in.geometry_foundation_type",
+       "in.cooling_setpoint"
+      ],
+      "4A": [
+       "in.cooling_setpoint",
+       "in.duct_location",
+       "in.hvac_has_ducts"
+      ],
+      "4C": [
+       "in.cooling_setpoint",
+       "in.geometry_building_type_height",
+       "in.hvac_has_shared_system"
+      ],
+      "5A": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.heating_setpoint"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.geometry_attic_type"
+      ],
+      "6A": [
+       "in.hvac_has_shared_system",
+       "in.usage_level",
+       "in.hvac_has_ducts"
+      ]
+     }
+    },
+    "s21": {
+     "national": [
+      "in.duct_location",
+      "in.cooling_setpoint",
+      "in.hvac_has_shared_system"
+     ],
+     "zones": {
+      "1A": [
+       "in.geometry_building_type_height",
+       "in.hvac_has_ducts",
+       "in.duct_location"
+      ],
+      "2A": [
+       "in.hvac_has_ducts",
+       "in.duct_location",
+       "in.windows"
+      ],
+      "2B": [
+       "in.hvac_has_ducts",
+       "in.geometry_building_type_height",
+       "in.windows"
+      ],
+      "3A": [
+       "in.geometry_building_type_height",
+       "in.cooling_setpoint",
+       "in.occupants"
+      ],
+      "3B": [
+       "in.geometry_foundation_type",
+       "in.geometry_attic_type",
+       "in.windows"
+      ],
+      "3C": [
+       "in.cooling_setpoint",
+       "in.duct_location",
+       "in.usage_level"
+      ],
+      "4A": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.hvac_has_ducts"
+      ],
+      "4C": [
+       "in.geometry_foundation_type",
+       "in.cooling_setpoint",
+       "in.water_heater_location"
+      ],
+      "5A": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.heating_setpoint"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.water_heater_efficiency",
+       "in.hvac_has_shared_system"
+      ],
+      "6A": [
+       "in.hvac_has_shared_system",
+       "in.geometry_building_type_height",
+       "in.geometry_wall_type"
+      ]
+     }
+    },
+    "s31": {
+     "national": [
+      "in.duct_location",
+      "in.hvac_has_shared_system",
+      "in.cooling_setpoint"
+     ],
+     "zones": {
+      "1A": [
+       "in.geometry_building_type_height",
+       "in.hvac_has_ducts",
+       "in.duct_location"
+      ],
+      "2A": [
+       "in.heating_setpoint",
+       "in.occupants",
+       "in.windows"
+      ],
+      "2B": [
+       "in.geometry_building_type_height",
+       "in.duct_location",
+       "in.window_areas"
+      ],
+      "3A": [
+       "in.cooling_setpoint",
+       "in.occupants",
+       "in.duct_location"
+      ],
+      "3B": [
+       "in.geometry_attic_type",
+       "in.usage_level",
+       "in.windows"
+      ],
+      "3C": [
+       "in.duct_location",
+       "in.occupants",
+       "in.usage_level"
+      ],
+      "4A": [
+       "in.duct_location",
+       "in.cooling_setpoint",
+       "in.geometry_building_type_height"
+      ],
+      "4C": [
+       "in.usage_level",
+       "in.cooling_setpoint",
+       "in.occupants"
+      ],
+      "5A": [
+       "in.duct_location",
+       "in.heating_setpoint",
+       "in.cooling_setpoint"
+      ],
+      "5B": [
+       "in.duct_location",
+       "in.geometry_attic_type",
+       "in.water_heater_location"
+      ],
+      "6A": [
+       "in.hvac_has_shared_system",
+       "in.geometry_foundation_type",
+       "in.hvac_has_ducts"
+      ]
+     }
+    }
+   },
+   "training": {
+    "s1": [
+     {
+      "best_es_loss": 0.12230011820793152,
+      "best_epoch": 26
+     },
+     {
+      "best_es_loss": 0.12161364406347275,
+      "best_epoch": 27
+     },
+     {
+      "best_es_loss": 0.12116586416959763,
+      "best_epoch": 29
+     }
+    ],
+    "s11": [
+     {
+      "best_es_loss": 0.12280026823282242,
+      "best_epoch": 29
+     },
+     {
+      "best_es_loss": 0.12134157121181488,
+      "best_epoch": 28
+     },
+     {
+      "best_es_loss": 0.12162811309099197,
+      "best_epoch": 29
+     }
+    ],
+    "s21": [
+     {
+      "best_es_loss": 0.12337653338909149,
+      "best_epoch": 24
+     },
+     {
+      "best_es_loss": 0.12183495610952377,
+      "best_epoch": 23
+     },
+     {
+      "best_es_loss": 0.12016943842172623,
+      "best_epoch": 28
+     }
+    ],
+    "s31": [
+     {
+      "best_es_loss": 0.12194418907165527,
+      "best_epoch": 21
+     },
+     {
+      "best_es_loss": 0.12070344388484955,
+      "best_epoch": 26
+     },
+     {
+      "best_es_loss": 0.12143950909376144,
+      "best_epoch": 29
+     }
+    ]
+   },
+   "V": {
+    "FIX_SCZ": 2759.3799960154247,
+    "ORACLE": 2948.170810208936,
+    "s1:NONE": 2841.616554033052,
+    "s1:HOME@0.0": 2872.0457772685063,
+    "s1:FULL@0.0": 2879.3922282571184,
+    "s1:STATIC3@0.0": 2866.335202609698,
+    "s1:HOME@0.1": 2867.8633746592086,
+    "s1:FULL@0.1": 2875.2072682955986,
+    "s1:STATIC3@0.1": 2859.8395412810078,
+    "s1:HOME@0.2": 2860.210328481858,
+    "s1:FULL@0.2": 2871.2622835654342,
+    "s1:STATIC3@0.2": 2858.504864103865,
+    "s1:HOME@0.3": 2853.847093579435,
+    "s1:FULL@0.3": 2866.3695451109993,
+    "s1:STATIC3@0.3": 2852.2650736176947,
+    "s11:NONE": 2840.1073847629395,
+    "s11:HOME@0.0": 2873.389600106398,
+    "s11:FULL@0.0": 2880.686326732792,
+    "s11:STATIC3@0.0": 2866.8920435499094,
+    "s11:HOME@0.1": 2868.0620605721033,
+    "s11:FULL@0.1": 2876.041861765189,
+    "s11:STATIC3@0.1": 2861.696178620225,
+    "s11:HOME@0.2": 2861.514000969288,
+    "s11:FULL@0.2": 2871.231220011911,
+    "s11:STATIC3@0.2": 2858.2936012372975,
+    "s11:HOME@0.3": 2854.4968327765755,
+    "s11:FULL@0.3": 2865.84085929151,
+    "s11:STATIC3@0.3": 2854.3513656806253,
+    "s21:NONE": 2840.53240562084,
+    "s21:HOME@0.0": 2871.4028254890636,
+    "s21:FULL@0.0": 2880.6187804645997,
+    "s21:STATIC3@0.0": 2865.7178631278393,
+    "s21:HOME@0.1": 2866.2643202584577,
+    "s21:FULL@0.1": 2874.923812610551,
+    "s21:STATIC3@0.1": 2861.7019602609744,
+    "s21:HOME@0.2": 2860.398303003387,
+    "s21:FULL@0.2": 2870.705367270202,
+    "s21:STATIC3@0.2": 2857.921202102412,
+    "s21:HOME@0.3": 2854.3679237432348,
+    "s21:FULL@0.3": 2866.178815202575,
+    "s21:STATIC3@0.3": 2853.0101428011412,
+    "s31:NONE": 2840.032869673737,
+    "s31:HOME@0.0": 2873.541841118745,
+    "s31:FULL@0.0": 2880.9457596767015,
+    "s31:STATIC3@0.0": 2866.586491231663,
+    "s31:HOME@0.1": 2867.526139969963,
+    "s31:FULL@0.1": 2876.6441435108227,
+    "s31:STATIC3@0.1": 2861.441717192207,
+    "s31:HOME@0.2": 2863.453697012493,
+    "s31:FULL@0.2": 2871.829828468959,
+    "s31:STATIC3@0.2": 2859.0299261083987,
+    "s31:HOME@0.3": 2856.1604012118496,
+    "s31:FULL@0.3": 2866.9033232106244,
+    "s31:STATIC3@0.3": 2853.4653838249815
+   },
+   "G": 188.79081419351132,
+   "C": {
+    "FIX_SCZ": 0.0,
+    "ORACLE": 1.0,
+    "s1:NONE": 0.4355961828382955,
+    "s1:HOME@0.0": 0.596775758049323,
+    "s1:FULL@0.0": 0.6356889383329885,
+    "s1:STATIC3@0.0": 0.5665275985548957,
+    "s1:HOME@0.1": 0.5746221240011604,
+    "s1:FULL@0.1": 0.6135217583279795,
+    "s1:STATIC3@0.1": 0.5321209386946743,
+    "s1:HOME@0.2": 0.534084949509683,
+    "s1:FULL@0.2": 0.592625695418262,
+    "s1:STATIC3@0.2": 0.5250513300230653,
+    "s1:HOME@0.3": 0.5003797349334009,
+    "s1:FULL@0.3": 0.5667095062470036,
+    "s1:STATIC3@0.3": 0.49199998421036767,
+    "s11:NONE": 0.42760231260388,
+    "s11:HOME@0.0": 0.6038938100776087,
+    "s11:FULL@0.0": 0.6425436069841195,
+    "s11:STATIC3@0.0": 0.5694771114461346,
+    "s11:HOME@0.1": 0.5756745370316537,
+    "s11:FULL@0.1": 0.6179424896710568,
+    "s11:STATIC3@0.1": 0.5419553013841334,
+    "s11:HOME@0.2": 0.5409903304361818,
+    "s11:FULL@0.2": 0.5924611558793228,
+    "s11:STATIC3@0.2": 0.5239322985306157,
+    "s11:HOME@0.3": 0.5038213176180049,
+    "s11:FULL@0.3": 0.5639091273104119,
+    "s11:STATIC3@0.3": 0.5030507976296698,
+    "s21:NONE": 0.4298535919350074,
+    "s21:HOME@0.0": 0.593370127419521,
+    "s21:FULL@0.0": 0.6421858233256241,
+    "s21:STATIC3@0.0": 0.5632576328815337,
+    "s21:HOME@0.1": 0.5661521441052537,
+    "s21:FULL@0.1": 0.6120203310140583,
+    "s21:STATIC3@0.1": 0.5419859259713201,
+    "s21:HOME@0.2": 0.5350806257152853,
+    "s21:FULL@0.2": 0.5896757833814318,
+    "s21:STATIC3@0.2": 0.5219597495139886,
+    "s21:HOME@0.3": 0.5031385034996834,
+    "s21:FULL@0.3": 0.5656992351210544,
+    "s21:STATIC3@0.3": 0.4959465172375668,
+    "s31:NONE": 0.42720761602120516,
+    "s31:HOME@0.0": 0.6047002106061377,
+    "s31:FULL@0.0": 0.6439177890120832,
+    "s31:STATIC3@0.0": 0.5678586411855352,
+    "s31:HOME@0.1": 0.5728358364072103,
+    "s31:FULL@0.1": 0.6211326965050418,
+    "s31:STATIC3@0.1": 0.5406074528190153,
+    "s31:HOME@0.2": 0.5512646441070621,
+    "s31:FULL@0.2": 0.5956319057889798,
+    "s31:STATIC3@0.2": 0.5278325140906086,
+    "s31:HOME@0.3": 0.5126330198312753,
+    "s31:FULL@0.3": 0.5695368583186886,
+    "s31:STATIC3@0.3": 0.49835786879502986
+   },
+   "results": {
+    "s1@0.0": {
+     "nn_home_gain": {
+      "est": 0.16117957521102755,
+      "ci": [
+       0.14101235794397657,
+       0.18327285098868631
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.038913180283665416,
+      "ci": [
+       0.025425110994712903,
+       0.05256238928500977
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.12226639492736213,
+      "ci": [
+       0.09408914514999885,
+       0.15077885747854808
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8123325523421663,
+      "ci": [
+       0.737321567345056,
+       0.8826778976815325
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.1": {
+     "nn_home_gain": {
+      "est": 0.13902594116286493,
+      "ci": [
+       0.12008236567686505,
+       0.15994350936386456
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03889963432681909,
+      "ci": [
+       0.026101439552499425,
+       0.05251863356733304
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.10012630683604584,
+      "ci": [
+       0.07549369937035937,
+       0.127746982156136
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.6942931301094575,
+      "ci": [
+       0.6036364977086983,
+       0.7826517673791629
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8625530932243894,
+      "ci": [
+       0.8124070207440672,
+       0.9109956274503256
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.2": {
+     "nn_home_gain": {
+      "est": 0.0984887666713875,
+      "ci": [
+       0.07894903663350904,
+       0.12051856045506804
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.05854074590857905,
+      "ci": [
+       0.0438085697287855,
+       0.07271683780126793
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.039948020762808456,
+      "ci": [
+       0.013865048771538874,
+       0.07117471196952993
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.9082776666626475,
+      "ci": [
+       0.7770337357165826,
+       1.0441282892746035
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6110499208255087,
+      "ci": [
+       0.53667244140534,
+       0.6869604630938431
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s1@0.3": {
+     "nn_home_gain": {
+      "est": 0.06478355209510545,
+      "ci": [
+       0.044314219046290994,
+       0.08725376696690809
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.06632977131360263,
+      "ci": [
+       0.05341513314598802,
+       0.07980930871483609
+      ]
+     },
+     "home_minus_audit": {
+      "est": -0.0015462192184971801,
+      "ci": [
+       -0.028669331374900162,
+       0.027498141624277266
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.870650026865903,
+      "ci": [
+       0.6546079460442504,
+       1.1129818106893152
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.4019340044188992,
+      "ci": [
+       0.29768083167866694,
+       0.5037044819807638
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.0": {
+     "nn_home_gain": {
+      "est": 0.1762914974737287,
+      "ci": [
+       0.15080091804486384,
+       0.2016758652280912
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.038649796906510825,
+      "ci": [
+       0.027159696312657734,
+       0.04992479219075491
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.13764170056721792,
+      "ci": [
+       0.10716108071258854,
+       0.1674357048480325
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8047739163563293,
+      "ci": [
+       0.735593320478034,
+       0.8710579517728622
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.1": {
+     "nn_home_gain": {
+      "est": 0.14807222442777374,
+      "ci": [
+       0.12388109150050049,
+       0.1738892215578561
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.042267952639403084,
+      "ci": [
+       0.029083005997870916,
+       0.054994495158415466
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.10580427178837071,
+      "ci": [
+       0.07427546284750268,
+       0.13624475418061152
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7722784554778684,
+      "ci": [
+       0.691240285622055,
+       0.8625951977746249
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8399283377228091,
+      "ci": [
+       0.7852941230756706,
+       0.8891054344357068
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.2": {
+     "nn_home_gain": {
+      "est": 0.11338801783230185,
+      "ci": [
+       0.08867153038380664,
+       0.1397337187645702
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.051470825443140966,
+      "ci": [
+       0.03620698141452412,
+       0.06571406600222071
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.061917192389160935,
+      "ci": [
+       0.03299878096841762,
+       0.09451217588298169
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8495605423600003,
+      "ci": [
+       0.7380437226373814,
+       0.9654614039405337
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6431848356679775,
+      "ci": [
+       0.5660558920981876,
+       0.7164023220587084
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s11@0.3": {
+     "nn_home_gain": {
+      "est": 0.07621900501412487,
+      "ci": [
+       0.05124192764700961,
+       0.10174922704227683
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.06008780969240701,
+      "ci": [
+       0.04526701440965317,
+       0.07383062212008065
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.016131195321717917,
+      "ci": [
+       -0.014213563233720333,
+       0.048912143566945204
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.9898907104836607,
+      "ci": [
+       0.8064101182365415,
+       1.2422578011185974
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.4323464608693518,
+      "ci": [
+       0.32281872563368974,
+       0.5365059842860038
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.0": {
+     "nn_home_gain": {
+      "est": 0.16351653548451361,
+      "ci": [
+       0.1395520857590993,
+       0.1875199772848444
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04881569590610313,
+      "ci": [
+       0.035036412391206515,
+       0.06239284721445566
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.11470083957841049,
+      "ci": [
+       0.08447067136957644,
+       0.14567215678541473
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8158443459631692,
+      "ci": [
+       0.7427340494000276,
+       0.8965150420694196
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.1": {
+     "nn_home_gain": {
+      "est": 0.13629855217024633,
+      "ci": [
+       0.11548745760952561,
+       0.16012642381805664
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.045868186908804565,
+      "ci": [
+       0.03319166179169411,
+       0.05829722903422449
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.09043036526144177,
+      "ci": [
+       0.06310745735671919,
+       0.11775088705285118
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8226964428518043,
+      "ci": [
+       0.7435819514166865,
+       0.9167522263181215
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8335459882780781,
+      "ci": [
+       0.7784086322747306,
+       0.8918657123762158
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.2": {
+     "nn_home_gain": {
+      "est": 0.10522703378027787,
+      "ci": [
+       0.08330726454961937,
+       0.13002906616308366
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.05459515766614653,
+      "ci": [
+       0.039494421990210325,
+       0.06890040083278322
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.050631876114131336,
+      "ci": [
+       0.020582508022458125,
+       0.08152156550242665
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8753088847045328,
+      "ci": [
+       0.7593550103905724,
+       1.0059794715531218
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6435253380857238,
+      "ci": [
+       0.5648871758452026,
+       0.7165765513272961
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s21@0.3": {
+     "nn_home_gain": {
+      "est": 0.07328491156467598,
+      "ci": [
+       0.05019751930995026,
+       0.09658107115451266
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.06256073162137099,
+      "ci": [
+       0.05040025608127585,
+       0.07485551564478629
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.01072417994330499,
+      "ci": [
+       -0.018067716228515638,
+       0.04170380989387505
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.9018626602862246,
+      "ci": [
+       0.7172797190793272,
+       1.1294945585498672
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.44818043231852034,
+      "ci": [
+       0.3332572193317118,
+       0.5488398377100182
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.0": {
+     "nn_home_gain": {
+      "est": 0.1774925945849325,
+      "ci": [
+       0.1542425222228091,
+       0.20191699503527996
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.03921757840594553,
+      "ci": [
+       0.02626527004532061,
+       0.05063241305153442
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.13827501617898696,
+      "ci": [
+       0.11010839141190316,
+       0.16717756139826975
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.7924332025977946,
+      "ci": [
+       0.7290357681802149,
+       0.8501801794660284
+      ]
+     },
+     "home_gain_retained": {
+      "est": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.1": {
+     "nn_home_gain": {
+      "est": 0.1456282203860051,
+      "ci": [
+       0.12327115176738308,
+       0.16814486490507496
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.04829686009783152,
+      "ci": [
+       0.03675947173866195,
+       0.059471732609205095
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.09733136028817357,
+      "ci": [
+       0.07194611355334142,
+       0.12342930218469975
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.778694105422907,
+      "ci": [
+       0.6953295582809806,
+       0.8507752570520164
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.8204749089761044,
+      "ci": [
+       0.7661603031759419,
+       0.8697051412697205
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.2": {
+     "nn_home_gain": {
+      "est": 0.12405702808585695,
+      "ci": [
+       0.10091635028734108,
+       0.14825032836254715
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.044367261681917736,
+      "ci": [
+       0.029653976706525944,
+       0.057436655648174406
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.07968976640393921,
+      "ci": [
+       0.05097451422531403,
+       0.11319632639938944
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8111180770811576,
+      "ci": [
+       0.7104946616953829,
+       0.902236461304813
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.6989419945996341,
+      "ci": [
+       0.6243538327186973,
+       0.7648596900710491
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": true,
+     "Q3_short_home_questionnaire": true
+    },
+    "s31@0.3": {
+     "nn_home_gain": {
+      "est": 0.08542540381007013,
+      "ci": [
+       0.06277070443367583,
+       0.1089027485378273
+      ]
+     },
+     "nn_audit_gain": {
+      "est": 0.056903838487413316,
+      "ci": [
+       0.041686737109981394,
+       0.07126316583097732
+      ]
+     },
+     "home_minus_audit": {
+      "est": 0.028521565322656817,
+      "ci": [
+       -0.0008696834597289177,
+       0.06102756041272961
+      ]
+     },
+     "rho3_home_static": {
+      "est": 0.8328933736387835,
+      "ci": [
+       0.6906998133577645,
+       0.9938516335661194
+      ]
+     },
+     "home_gain_retained": {
+      "est": 0.4812899603492639,
+      "ci": [
+       0.3878008892597762,
+       0.5666429580254312
+      ]
+     },
+     "Q1_home_value": true,
+     "Q2_home_over_audit": false,
+     "Q3_short_home_questionnaire": true
+    }
+   },
+   "verdict": {
+    "C1_retraining": true,
+    "C2_answer_error": true
+   },
+   "integrity": {
+    "FIX_SCZ": 2759.3799960154247,
+    "ORACLE": 2948.170810208936,
+    "match": true
+   }
+  }
+ },
+ "elapsed_s": 481.6510078907013
+}

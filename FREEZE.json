@@ -270,5 +270,30 @@
     "status_b2.json": "fcb5123faba3d095de61839d5c8d12bd0e684712ca344761d9d648dbc0dd00e0"
    }
   }
+ },
+ "h_c1": {
+  "frozen_at": "2026-10-17T13:30:00+08:00",
+  "note": "robustness of Q1-Q3 to retraining (4 value-network ensembles) and to homeowner answer errors (e in 0,0.1,0.2,0.3), main scenario, test splits of both datasets (third use; no claim or setting is changed); registered after the simulated editor screening, before any H-C1 result; local CO CPU smoke passed (pipeline only, 2 epochs)",
+  "sha256": {
+   "h_c1.py": "97ee0dbddf0c2245325f5d6f3dca65afba1b68d35e77a4085c2bdbdd6c85e568",
+   "H_C1_PROTOCOL_20261017_CN.md": "45f9b901a636a48dbb52730dc2d44c79c7b33e1d7aaee3fe7c6dea131f6204c1",
+   "h_a6.py": "2e47afaa007b824c8cf99fd3942c5a2518803937daf327afe1b09ee9cd893fcd",
+   "h_a5.py": "32cb724bc2dc0d7438c89e67af4632a72f63ce6dfe017cfd36459533dd4d762d",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "h_b1.py": "931b8ed8a5421508d9ab1e9b8b7f5c70d8c50ae5b855b2a7da8900ac2a9ad17a",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: c1 job tag, upload h_c1, h_a6 and cache_b1",
+   "new_sha256": "2d1841bda4e9d82e50cd7bf2cbdff14f1415fc05dd564a913fbe513702eb3be2"
+  },
+  "executed": {
+   "at": "2026-10-17T13:08:50+08:00",
+   "attempts": 1,
+   "summary_sha256": "78fa5d4aa338864002f0f431ad6b965d092cbf998323a6bcc955d91c0d30e122",
+   "verdict": "C1 and C2 hold in both datasets; integrity true. Descriptive: at e=0.3 Q2 fails in all 8 ensemble-dataset cases, Q1 and Q3 hold"
+  }
  }
 }

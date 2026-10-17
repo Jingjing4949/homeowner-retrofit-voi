@@ -38,6 +38,7 @@ code, every revision and every execution. Supplementary Table S1 of the paper li
 | H-B1 | `h_b1.py run` | B test (first use) | `runs/remote_b1/output_b1/` |
 | H-A6 | `h_a6.py A run` | A test (second use) | `runs/remote_a6/output_a6/` |
 | H-B2 | `h_b2.py run` | B test (second use) | `runs/remote_b2/output_b2/` |
+| H-C1 | `h_c1.py run` | A and B test, main scenario (third use): retraining and answer-error robustness | `runs/remote_c1/output_c1/` |
 
 Each script also has a `smoke` stage that runs the pipeline on a small Colorado subset of the training split.
 The claims of the paper (Q1–Q3) are those of H-A6 and H-B2.
