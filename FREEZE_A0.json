@@ -1,0 +1,10 @@
+﻿{
+    "frozen_at":  "2026-10-14T11:24:24.4543843Z",
+    "note":  "frozen before full run; smoke run used CO train rows only",
+    "sha256":  {
+                   "h_a0.py":  "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9",
+                   "cache\\MANIFEST.json":  "4fa29aa278a7d0d8b8831eed73abad0b302f27753213765b6f51387c60bf5081",
+                   "H_A0_PROTOCOL_20261014_CN.md":  "392c3e00a2e38c1d0d35ed085547cc12d1c88163ffbf00fac537771ad757da00"
+               },
+    "env":  "3.12.10 4.7.0 2.5.4 3.0.5 25.0.1"
+}

@@ -1,0 +1,274 @@
+{
+ "frozen_at": "2026-10-14T20:05:45+08:00",
+ "note": "frozen before any tune-set result of H-A1",
+ "sha256": {
+  "h_a1.py": "7b8352b2a596a0f6f6b4b8335ebbc9725cb2644738b4f7abd0cc2df1bc068fd3",
+  "H_A1_PROTOCOL_20261014_CN.md": "7a52f30b96694ec15be682c77db5259625f2e6fbbc2a0dfca255dbc55db6e2b7",
+  "launch_a1.py": "5839432da80e2dac29b0efed3efe4fa415c9199e7a73d8d3544c65d2faf21f40",
+  "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9",
+  "cache/MANIFEST.json": "4fa29aa278a7d0d8b8831eed73abad0b302f27753213765b6f51387c60bf5081"
+ },
+ "revisions": [
+  {
+   "file": "launch_a1.py",
+   "reason": "operational only: 4090D and 5090-p out of stock at 20:05; added fallback GPU specs, same price ceiling; no scientific change",
+   "new_sha256": "70224202664e1ac9df79dd14fa689cfd9970a9c794daa78a6796afeca9b172d4"
+  },
+  {
+   "file": "launch_a1.py",
+   "reason": "operational only: GET status/snapshot must pass instance_uuid as query string (RequestParameterIsWrong at 20:06:51); added URLError retry",
+   "new_sha256": "0e59da005b698f5388b84218b2b1060b3c36a1a12b8e5300f74bdec95aa978c0"
+  },
+  {
+   "file": "launch_a1.py",
+   "reason": "user approved RTX PRO 6000 at 6.98 CNY/h (only spec in stock) at 20:09; price ceiling 7.5, remote auto-shutdown 3h; no scientific change",
+   "new_sha256": "3ad95210842a1ccce5afc13fe88c12c314c2a5a0cbb29f5e45531f7aab834c79"
+  },
+  {
+   "file": "launch_a1.py",
+   "reason": "operational only: 2026-10-14 bootstrap over SSH hung with no output until the 3h remote watchdog powered off at 23:10 (no job started, no results). Environment setup, smoke and run now run inside one background job with per-step timeouts and logs; local polling has a hard deadline; power-off retried; power-on waits for stock. No scientific change.",
+   "new_sha256": "eb7c7ae40a8fe19641c6ab26a43c73009cc01d80dfc4977005eb0d2172c1522c"
+  },
+  {
+   "file": "h_a1.py",
+   "reason": "bug fix before any tune-set result: remote smoke 2026-10-15 18:00 failed at target scale (np.average over 2-D array with 1-D weights); scale is now RMS over households of per-household mean squared value. Local CPU smoke (CO, sel rows only) then passed end to end; a CO sanity run with the frozen training config gave NN_FULL C=0.829 on sel. No model, policy, metric or threshold change.",
+   "new_sha256": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b"
+  },
+  {
+   "file": "launch_a1.py",
+   "date": "2026-10-16T15:50:00+08:00",
+   "reason": "operational only, before any H-A6 run: RTX PRO 6000 out of stock 13:38-15:31 (12 power-on attempts); user approved other GPUs at 15:34. Each 10-min round now tries the recorded instance, then creates one new instance of 4090D / 4090-48G / 5090 / 4080S-32G / 3090-48G (cuda_v_from 130, because the remote env installs torch cu130); same 7.5 CNY/h ceiling. Env check now fails fast without CUDA and logs cgroup CPU quota and driver. Remote auto-shutdown raised from 3 h to 5 h because fewer CPU cores may slow LightGBM. The old instance is kept, not released. LightGBM thread count may differ from earlier runs; no model, data, metric or threshold change.",
+   "new_sha256": "fc7c4da7c125587f52b555c4b6d8f58da294bcb84b39a68821bcac55a11c0241"
+  },
+  {
+   "file": "launch_a1.py",
+   "date": "2026-10-16T17:25:00+08:00",
+   "reason": "operational only: pip install timeout raised from 3000 s to 7200 s after H-A6 attempt 1 boot timeout; wheels already downloaded are reused from the instance pip cache; no scientific change",
+   "new_sha256": "d0d33e67498475be37bcb9b23e0e818693f2f36ea2cf372923c68f87e30315fb"
+  },
+  {
+   "file": "launch_a1.py",
+   "date": "2026-10-16T22:03:00+08:00",
+   "reason": "operational only: H-B2 first attempt on pro-79213bb2b441 (4090-48G, 2.88 CNY/h) lost the SSH connection during upload at 22:02 (SSHException: Server connection dropped); no job started, no result; instance shut down. Upload now reconnects and resumes up to 6 times, skipping files whose remote SHA-256 already matches. No scientific change.",
+   "new_sha256": "0c00dfa7946833218e8db5067d6b3b5888e7aeb8c046a359fa0f11e4cb3218d3"
+  }
+ ],
+ "h_a1s": {
+  "frozen_at": "2026-10-15T18:40:00+08:00",
+  "note": "post-hoc sensitivity analysis registered after H-A1 tune results, before any H-A1S result; local CO CPU smoke passed (pipeline only, 2 epochs)",
+  "sha256": {
+   "h_a1s.py": "5d8ec2d2ba715959eec2624a96e43a465452b2b7f875c751b24e3d8ca963924a",
+   "H_A1S_PROTOCOL_20261015_CN.md": "5de12a2ddc8bfad88997fab14955fb1cd2720aa1c4a056ffd00a3460d7b6a744",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: job tag argument (a1/a1s) selects script, per-tag status/log/output names; H-A1 behaviour unchanged",
+   "new_sha256": "63527992bd462eaa5e59ad0c9dbdf828a4a6e9960bad92d80cb32f378f42e9f7"
+  }
+ },
+ "h_a2": {
+  "frozen_at": "2026-10-15T19:20:00+08:00",
+  "note": "decomposition robustness registered after H-A1S result, before any H-A2 result; local CO CPU smoke passed (pipeline only)",
+  "sha256": {
+   "h_a2.py": "23e5045b166684dfa3d724a7f20ce8458eb16321e236442844e6343c4b1b8607",
+   "H_A2_PROTOCOL_20261015_CN.md": "6fa7a228a3205d512b60005ad426dd20d57189124b0fc65b07e7f97262368f57",
+   "h_a1s.py": "5d8ec2d2ba715959eec2624a96e43a465452b2b7f875c751b24e3d8ca963924a",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9",
+   "cache/emis_alt/MANIFEST.json": "719c5025aeedb0b46b49614c63552aa925cccf87789af4fab6f1791e12d8ccf4"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: add a2 job tag, upload h_a2 files and cache/emis_alt",
+   "new_sha256": "770cf00c2a473300f978aa15305a475290b6b509813377ae9e08b6d0d1bf8e7e"
+  },
+  "revisions": [
+   {
+    "file": "launch_a1.py",
+    "reason": "operational only: remote smoke 2026-10-15 21:01 failed before any result (lightgbm sklearn API needs scikit-learn, not installed remotely); added scikit-learn to remote pip install. Attempt-1 logs kept in runs/remote_a2_attempt1_no_sklearn. No change to h_a2.py, data or protocol.",
+    "new_sha256": "e01327fe872c8d57a5018b7960c9a836a82866023406e37db59f6e00050e9fb3"
+   }
+  ]
+ },
+ "h_a3": {
+  "frozen_at": "2026-10-15T22:10:00+08:00",
+  "note": "sealed test evaluation registered after H-A2 tune results, before any test result; h_a2.py changed only by adding the test stage (eval set and output dir); local smoke re-passed",
+  "sha256": {
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "H_A3_PROTOCOL_20261015_CN.md": "9093d3aa53e1003491e49bb478f2a2c5435ccf409f4fc49bd6f6617523f392a8",
+   "h_a1s.py": "5d8ec2d2ba715959eec2624a96e43a465452b2b7f875c751b24e3d8ca963924a",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: a3 job tag runs h_a2.py test stage",
+   "new_sha256": "9c8e765f104728614ad8d51693dddc23206330f2e4814d24ed014a30c0f6f529"
+  },
+  "executed": {
+   "at": "2026-10-15T22:47:25+08:00",
+   "attempts": 1,
+   "summary_sha256": "83bef3fbe296901358df802ea45e2069abae42af26b43aec7cb5ec4e355c459f",
+   "verdict": "R1,R2,R3 hold in all 4 scenarios",
+   "sealed_test_consumed": true
+  }
+ },
+ "h_a4": {
+  "frozen_at": "2026-10-15T23:30:00+08:00",
+  "note": "diagnostic registered after H-A3 test results and after a data check showing ground conductivity is largely sampled per building (PUMA R2 0.187); tune set only; local CO smoke passed",
+  "sha256": {
+   "h_a4.py": "b23731089c4aa52f13452bf70a8e166015b099e7546ec19a24e403110a201e64",
+   "H_A4_PROTOCOL_20261015_CN.md": "04906646627d1f1a1cf7b881b540c89f6671aa810089490790e0ee10f791f229",
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: a4 job tag, upload h_a4 files",
+   "new_sha256": "268bbd0fba0bb9dac73804e954a637c63215c80ec6e678e2767d435e157e9d2a"
+  },
+  "executed": {
+   "at": "2026-10-15T23:40:31+08:00",
+   "attempts": 1,
+   "summary_sha256": "2e0811c6418e86b9799a7e07ae63127dd008eed1277e30fa0a54686850d36ff9",
+   "decision": "GSHP_ONLY"
+  }
+ },
+ "h_a5": {
+  "frozen_at": "2026-10-16T00:05:00+08:00",
+  "note": "four-tier decomposition registered after H-A4 (GSHP_ONLY), before any H-A5 result; tune set only; local CO smoke passed. Before freezing, the untested-household baseline was changed from the classifier-expectation decision to the direct T3 model decision (smoke showed the former is weaker); no full-data result had been seen.",
+  "sha256": {
+   "h_a5.py": "32cb724bc2dc0d7438c89e67af4632a72f63ce6dfe017cfd36459533dd4d762d",
+   "H_A5_PROTOCOL_20261016_CN.md": "ff00fed9b345e99df5589be4fcbe528266d4d50ec7d704ca7e06c2a9776c3376",
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "h_a1s.py": "5d8ec2d2ba715959eec2624a96e43a465452b2b7f875c751b24e3d8ca963924a",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: a5 job tag, upload h_a5 files",
+   "new_sha256": "74e113f84ec72879c3d87bd218f844eedbda89a408ed5bcebddae8ce339f2fa2"
+  },
+  "executed": {
+   "at": "2026-10-16T01:22:34+08:00",
+   "attempts": 1,
+   "summary_sha256": "b9ffd2e922a3ce55723972546094b0bd3d88588ac3d59b55f90283ae60ff1247",
+   "verdict": "R1-R4 hold in all 4 scenarios"
+  }
+ },
+ "h_b1": {
+  "frozen_at": "2026-10-16T01:50:00+08:00",
+  "note": "independent replication of H-A5 on ResStock 2024.2 AMY2018; frozen H-A5 code, only dataset/actions/scenarios/GSHP ids replaced; local CO smoke passed",
+  "sha256": {
+   "h_b1.py": "931b8ed8a5421508d9ab1e9b8b7f5c70d8c50ae5b855b2a7da8900ac2a9ad17a",
+   "H_B1_PROTOCOL_20261016_CN.md": "627d149486f5ef5b4520eb07a34759bdbc7a5768058207162eb378a5074e9846",
+   "cache_b1/MANIFEST.json": "c43a9bc9fde196bc91d212ee2a365564b3fff00ec3a28adc2f7373ec717a6826",
+   "h_a5.py": "32cb724bc2dc0d7438c89e67af4632a72f63ce6dfe017cfd36459533dd4d762d",
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: b1 job tag, upload h_b1 and cache_b1",
+   "new_sha256": "68a73fcb35355c4a6d1515d68909173e3043eef6ad41126897aa4acb0492d7ca"
+  },
+  "attempt1": {
+   "outcome": "remote smoke failed (ZeroDivisionError in rho3 point estimate: 2-epoch single-seed network constant on GPU); full run never started",
+   "files_sha256": {
+    "b1_run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "b1_smoke.log": "60cadaebc11a1a29201d1f790e2e74a9a4377905eca26d25e49312131dd23ca9",
+    "boot_conda.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "boot_info.log": "c95cd16cebe3e2184eb02f1be105f22293a08ec530d64edba6f99e2c556aa742",
+    "boot_pip.log": "d6efafbf36b2fbd9d47ceec92baa994ea517badfe0bf2f599b6ac1abc036b33c",
+    "env.log": "664387a8d8d2578f1e8db64433f4f8bd66485d4a7ad9dc419511d0f5a2da6fea"
+   }
+  },
+  "revision1": {
+   "file": "h_b1.py",
+   "change": "smoke only: catch ZeroDivisionError and stop smoke; full-run path unchanged (re-raises)",
+   "old_sha256": "f7ba3a6dd42400e9f39ae61fe572dae0955209a8ffba0e2407e1bab73030a80d",
+   "new_sha256": "931b8ed8a5421508d9ab1e9b8b7f5c70d8c50ae5b855b2a7da8900ac2a9ad17a"
+  },
+  "executed": {
+   "at": "2026-10-16T02:26:49+08:00",
+   "attempts": 2,
+   "summary_sha256": "5ddb6b71cdf0225dfd0569ea78a8c567b652928b2974d437cbb935633e98796f",
+   "verdict": "R1, R2 replicated in 3/3; R3 1/3 (2 inconclusive); R4 0/3"
+  }
+ },
+ "h_a6": {
+  "frozen_at": "2026-10-16T13:55:00+08:00",
+  "note": "homeowner-questionnaire evaluation on held-out splits of both datasets, registered after H-B1 when the paper was refocused on homeowner questions; frozen H-A5 code plus NN-only home-item evaluations; dataset A sealed test previously used once in H-A3, dataset B test previously used once in H-B1; local CO smokes passed",
+  "sha256": {
+   "h_a6.py": "2e47afaa007b824c8cf99fd3942c5a2518803937daf327afe1b09ee9cd893fcd",
+   "h_b2.py": "18fa88222f37a623d244d64c5b26726d7c6dfd064900405c5d4ba3e6c7f1e9d0",
+   "H_A6_PROTOCOL_20261016_CN.md": "f6585d7e2d22291fcc4f01e194ab0eec87bd3712b2e1a5f605164047e718cc0a",
+   "h_a5.py": "32cb724bc2dc0d7438c89e67af4632a72f63ce6dfe017cfd36459533dd4d762d",
+   "h_b1.py": "931b8ed8a5421508d9ab1e9b8b7f5c70d8c50ae5b855b2a7da8900ac2a9ad17a",
+   "h_a2.py": "a7f3780c5a98794dcdda3e7c173231c0d7c0cc6b59a1d72feebf122019fa7e6c",
+   "h_a1.py": "1705322ea9aaedb7ac1b26184d82f57329201b2430d3bc8cf72bffedb4851a6b",
+   "cache_b1/MANIFEST.json": "c43a9bc9fde196bc91d212ee2a365564b3fff00ec3a28adc2f7373ec717a6826",
+   "h_a0.py": "e90460651e55e8063898f41b595645d518df64358f254c10d8028e1d52db45f9"
+  },
+  "launcher_revision": {
+   "file": "launch_a1.py",
+   "reason": "operational only: a6/b2 job tags and uploads",
+   "new_sha256": "a12c73ef57a1ccfd879909b8851c9aec212200d6b1a27bb62cf5380467fb46dc"
+  },
+  "attempt1": {
+   "outcome": "boot failed on pro-7921f366214f (RTX 4080 SUPER 32GB, 16 CPU, 1.68 CNY/h): pip install of torch cu130 exceeded the 3000 s timeout at 17:19 while downloading CUDA wheels from the aliyun mirror; no smoke or run started, no result produced; instance shut down 17:21",
+   "files_sha256": {
+    "a6_run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a6_smoke.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "boot_conda.log": "33846ea7458e239788eea1c01a940c8a61613a15e27a12aeef6bfc7330190bb0",
+    "boot_info.log": "c95cd16cebe3e2184eb02f1be105f22293a08ec530d64edba6f99e2c556aa742",
+    "boot_pip.log": "268b244edc2664c77225baf8d72d117ded8715df47b88a350a54347e707743a1",
+    "env.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "job_a6.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output_a6/summary.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "smoke_output_a6/summary.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status_a6.json": "525eb636de9a1677651a1edaa221ace8bb03d95f64889ccd45b51eb0a7e360e5"
+   }
+  },
+  "result_A": {
+   "job": "a6",
+   "instance": "pro-79216a99f577 (RTX 5090, 2.88 CNY/h)",
+   "finished": "2026-10-16T20:41:55+08:00",
+   "verdict": "Q1, Q2, Q3 all true in all 4 dataset A scenarios; integrity true",
+   "files_sha256": {
+    "a6_run.log": "bd20ff7a6869d7447cfba2bdf8ea0a1787139a367412ce611eb4af8d5a076ded",
+    "a6_smoke.log": "620f8313602c1cb08d53b7bed2483b132540f8bcf8e3e7ed2b473da311d20639",
+    "boot_conda.log": "c9f4e8a0c6043871cbf2ca5b5902d05316ad1de05e41990c7a0b832eb43d303e",
+    "boot_info.log": "c95cd16cebe3e2184eb02f1be105f22293a08ec530d64edba6f99e2c556aa742",
+    "boot_pip.log": "fa26f4626b37565f140fd19e1cdab6a51c17d50f4d80c6a8a94f897e45d1d4d9",
+    "env.log": "fdda3b401e6af782989b897f040b9b9fcc3cbbc6e70e6f0273ae21bd9a7284e5",
+    "job_a6.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output_a6/summary.json": "3f736c6fcf1bbfa7d79300a0fab458c938b48fe48b3d54a0b7073063f30bbc54",
+    "smoke_output_a6/summary.json": "5cdd8b88c050415aacf8727fe0592445703c26dae73b0de4a8ad451001c56b3c",
+    "status_a6.json": "1f1222c9719acc03195ef757da2770f684b13dc69cfb74d855ff990d6814af90"
+   }
+  },
+  "result_B": {
+   "job": "b2",
+   "instance": "pro-79213bb2b441 (RTX 4090 48GB, 2.88 CNY/h)",
+   "finished": "2026-10-17T00:53:24+08:00",
+   "verdict": "Q1, Q2, Q3 all true in all 3 dataset B scenarios; integrity match true",
+   "files_sha256": {
+    "b2_run.log": "cf5d5ba0fd70337e3f34752744508e9c24ebfc89423135f843a754b55538a4ec",
+    "b2_smoke.log": "7950db7fcb5aae17fa7140a76e0ceaeacd9caf06e778f7b9cd143e6b6e653c92",
+    "boot_conda.log": "e84b4f991a4da1b7df9edb0b7ac3aeaf35a0ad18b9f75158602173b3f2236e11",
+    "boot_info.log": "c95cd16cebe3e2184eb02f1be105f22293a08ec530d64edba6f99e2c556aa742",
+    "boot_pip.log": "8a414bbc8f688b0b92907528e3ce4742742cbc3a24328192bd12a122890cc345",
+    "env.log": "87304aa3650d60fa193277f9f07e35711e38de73f51d783431d79947607336f6",
+    "job_b2.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output_b2/summary.json": "c37a762dda5c1ffc1157fb2d01509fb6a556f3b78611ed0b364c0cc15ca7f935",
+    "smoke_output_b2/summary.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status_b2.json": "fcb5123faba3d095de61839d5c8d12bd0e684712ca344761d9d648dbc0dd00e0"
+   }
+  }
+ }
+}

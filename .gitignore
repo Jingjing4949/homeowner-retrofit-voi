@@ -1,0 +1,10 @@
+cache/
+cache_b1/
+smoke_output*/
+output*/
+__pycache__/
+*.pdf
+*.png
+paper/latex/*.aux
+paper/latex/*.log
+paper/latex/supplementary.tex
