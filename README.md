@@ -1,6 +1,6 @@
 # What should a homeowner be asked?
 
-Code, registered protocols and result summaries for
+Code, pre-specified protocols and result summaries for
 
 > J. Fan, Y. Zhang. *What should a homeowner be asked? Value of information for household-specific retrofit
 > recommendation from two independent building-stock simulations.* Submitted to *Energy and Buildings*.
@@ -20,11 +20,12 @@ Both datasets are public and are downloaded anonymously from the NREL Open Energ
 
 The downloads are written to `cache/` and `cache_b1/` with a `MANIFEST.json` of file hashes.
 
-## Registered analyses
+## Pre-specified analyses
 
-Every stage was registered before it was run: the protocol (`protocols/`, in Chinese) fixes the claims,
+Every stage was pre-specified before it was run: the protocol (`protocols/`, in Chinese) fixes the claims,
 thresholds and evaluation split, and `FREEZE.json` / `FREEZE_A0.json` record the SHA-256 hashes of the frozen
-code, every revision and every execution. Supplementary Table S1 of the paper lists all stages and outcomes.
+code, every revision and every execution. The protocols were not deposited in a public registry before the runs; this repository publishes them
+with the hash records. Supplementary Table S1 of the paper lists all stages and outcomes.
 
 | Stage | Script | Split | Output |
 |---|---|---|---|
@@ -49,10 +50,10 @@ Table S1 from the stored summaries.
 
 ## Environment
 
-The registered runs used Python 3.11, PyTorch 2.14.1 (CUDA 13.0), LightGBM 4.7.0, NumPy 2.4.6, pandas 3.0.6 and
+The pre-specified runs used Python 3.11, PyTorch 2.14.1 (CUDA 13.0), LightGBM 4.7.0, NumPy 2.4.6, pandas 3.0.6 and
 pyarrow 26.0.0 on a single NVIDIA RTX 5090 / RTX PRO 6000 GPU (see `requirements.txt`). Network training is not
 bit-for-bit reproducible across GPUs; re-running H-B2 changed the network's three-question ratio over all 25
-items from 0.78 to 0.73, while the registered thresholds were met with wide margins.
+items from 0.78 to 0.73, while the pre-specified thresholds were met with wide margins.
 
 ## License
 

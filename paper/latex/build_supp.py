@@ -1,4 +1,4 @@
-"""Supplementary Material: the complete record of registered analyses, read from the stored run summaries."""
+"""Supplementary Material: the complete record of pre-specified analyses, read from the stored run summaries."""
 import json
 from pathlib import Path
 
@@ -126,7 +126,7 @@ def rows():
                f"{sum(met(0.2, k) for k in ('Q1_home_value', 'Q2_home_over_audit', 'Q3_short_home_questionnaire'))}/24"),
               ("Descriptive, $e=0.3$: Q2", span("home_minus_audit", 0.3), f"{met(0.3, 'Q2_home_over_audit')}/8")]
     R.append(("H-C1", "A, B test, third use (main scenario)", claims,
-              "Both registered criteria held. Q1 and Q3 also held at $e=0.3$ (20\\% of answers changed), Q2 did "
+              "Both pre-specified criteria held. Q1 and Q3 also held at $e=0.3$ (20\\% of answers changed), Q2 did "
               "not. Reported in Section 5.5; the last column counts ensemble--dataset--claim cases."))
     return R
 
@@ -147,24 +147,26 @@ TEX = r"""\documentclass[preprint,11pt]{elsarticle}
 Jingjing Fan, Yunan Zhang
 \end{center}
 
-\section*{S1. Complete record of registered analyses}
+\section*{S1. Complete record of pre-specified analyses}
 
-Every analysis in this project was registered before it was run: the code was frozen with cryptographic
-hashes, and the claims, thresholds and evaluation split were written down in a protocol. The two test splits
-were each evaluated twice, and their main scenarios a third time for the robustness analysis. Table~\ref{tabS1} lists every registered stage in order, the claims it tested, and
+Every analysis in this project was pre-specified before it was run: the code was frozen with cryptographic
+hashes, and the claims, thresholds and evaluation split were written down in a protocol. The protocols were
+not deposited in a public registry; they are published with the hash records and all run summaries in the code
+repository. The two test splits
+were each evaluated twice, and their main scenarios a third time for the robustness analysis. Table~\ref{tabS1} lists every pre-specified stage in order, the claims it tested, and
 what became of them, including claims that were withdrawn or did not replicate. Estimates are for the main
 emission scenario (Cambium long-run marginal rates, mid case) with 95\% PUMA cluster-bootstrap intervals; the
-last column counts the emission scenarios in which the registered threshold was met (four in dataset A, three in
+last column counts the emission scenarios in which the pre-specified threshold was met (four in dataset A, three in
 dataset B). Stages H-A1 and H-A1S used the value network; their thresholds applied to the main scenario only.
 
 The analysis developed in three steps. (i)~H-A1 to H-A3 started from utility records plus ground thermal
 conductivity, which was assumed to be obtainable from the address; on that basis the dataset A test split was
 first used (H-A3). (ii)~A tuning-split diagnostic (H-A4) then showed that ResStock samples conductivity for each
 dwelling and that its value comes entirely from ground-source heat pump (GSHP) packages, so it was moved into a
-separate tier that requires a thermal response test. The four-tier decomposition was registered on the tuning
+separate tier that requires a thermal response test. The four-tier decomposition was pre-specified on the tuning
 split (H-A5) and replicated on the dataset B test split (H-B1). (iii)~After H-B1, the paper was refocused on
-homeowner questions, and the claims Q1--Q3 were registered and evaluated on both test splits (H-A6, H-B2).
-Finally, their sensitivity to retraining and to errors in homeowner answers was registered and evaluated on the
+homeowner questions, and the claims Q1--Q3 were pre-specified and evaluated on both test splits (H-A6, H-B2).
+Finally, their sensitivity to retraining and to errors in homeowner answers was pre-specified and evaluated on the
 main scenario of both test splits (H-C1).
 
 Q1--Q3 are therefore not tests on untouched data. On the dataset B test split, the gradient-boosting homeowner
@@ -176,7 +178,7 @@ evaluations of a split.
 {\footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}p{1.05cm}p{1.5cm}p{5.9cm}p{3.45cm}p{1.95cm}@{}}
-\caption{Registered stages, claims and outcomes.}\label{tabS1}\\
+\caption{Pre-specified stages, claims and outcomes.}\label{tabS1}\\
 \toprule
 Stage & Split & Claim & Main scenario & Met \\
 \midrule
